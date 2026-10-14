@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffe5ef">
+<title>Для самой любимой 💖</title>
+<style>
+  :root{--pink:#ff6fa8;--deep:#c93677;--paper:#fffdf8;--ink:#49374a;--line:#f4c8d9}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;color:var(--ink);font-family:"Trebuchet MS",system-ui,sans-serif;
+    background:radial-gradient(circle at 10% 12%,#fff 0 3px,transparent 4px),linear-gradient(135deg,#ffeaf2,#fff2e8 55%,#f8e8ff);
+    background-size:36px 36px,auto;overflow-x:hidden}
+  .decor{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .float{position:absolute;color:#f58ab5;opacity:.48;animation:drift 7s ease-in-out infinite;font-size:clamp(20px,4vw,36px)}
+  .float:nth-child(1){top:8%;left:5%}.float:nth-child(2){top:22%;right:7%;animation-delay:-2s}.float:nth-child(3){bottom:15%;left:8%;animation-delay:-4s}
+  .float:nth-child(4){bottom:9%;right:10%;animation-delay:-1s}.float:nth-child(5){top:55%;right:3%;animation-delay:-3s}
+  @keyframes drift{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-14px) rotate(8deg)}}
+  .wrap{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 16px}
+  .sheet{width:min(760px,100%);background:var(--paper);border:2px solid #fff;border-radius:24px;padding:clamp(24px,5vw,48px);
+    box-shadow:0 18px 50px #bd5c8430;position:relative}
+  .sheet:before{content:"";position:absolute;inset:12px;border:1px dashed #f1b7ce;border-radius:17px;pointer-events:none}
+  .content{position:relative;z-index:1}
+  .topline{text-align:center;color:var(--deep);font-size:.88rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+  h1{font-family:Georgia,serif;text-align:center;font-size:clamp(2rem,6vw,3.35rem);line-height:1.08;color:#b72d6b;margin:16px 0}
+  .subtitle{text-align:center;color:#8d6480;margin:0 auto 24px;max-width:520px;line-height:1.65}
+  .school-icons{display:flex;justify-content:center;gap:13px;font-size:2rem;margin:18px 0}
+  .message{font-size:clamp(1.05rem,2.7vw,1.3rem);line-height:1.85;text-align:center;background:#fff2f7;border-radius:18px;padding:22px 18px;border:1px solid #f8d2e1}
+  .btn{display:block;width:fit-content;max-width:100%;margin:25px auto 0;border:0;border-radius:999px;padding:15px 25px;background:linear-gradient(135deg,#ff82b4,#e94f91);color:white;
+    font-size:1rem;font-weight:800;cursor:pointer;text-decoration:none;box-shadow:0 8px 18px #e94f9138;transition:transform .18s,box-shadow .18s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px #e94f9148}
+  .btn:focus-visible,.option:focus-visible{outline:3px solid #9c3a76;outline-offset:3px}
+  .page{display:none}.page.active{display:block;animation:appear .35s ease}
+  @keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .progress{height:8px;background:#f9dce8;border-radius:99px;overflow:hidden;margin:20px 0 27px}
+  .progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff9dc4,#d94688);transition:width .25s}
+  .question{padding:19px 0;border-bottom:1px solid #f5dce6}
+  .question:last-of-type{border-bottom:0}
+  .question h2{font-size:1.2rem;margin:0 0 13px;color:#a52f68}
+  .options{display:grid;gap:9px}
+  .option{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid #f1c7d8;border-radius:13px;background:#fff;cursor:pointer;transition:.18s}
+  .option:hover{border-color:#e777a5;background:#fff7fa}
+  .option:has(input:checked){border-color:#e64d91;background:#ffe8f1;box-shadow:inset 0 0 0 1px #e64d9140}
+  .option input{accent-color:#e64d91;width:17px;height:17px;flex:0 0 auto}
+  .error{color:#b3265f;text-align:center;min-height:1.2em;font-weight:700;margin:8px 0}
+  .answer-card{background:#fff2f7;border:1px solid #f6d1e0;border-radius:16px;padding:16px 18px;margin:12px 0}
+  .answer-card strong{display:block;color:#a52f68;margin-bottom:6px}
+  .answer-card p{margin:0;line-height:1.6}
+  .signature{text-align:center;color:#b72d6b;font-family:Georgia,serif;font-size:1.5rem;margin:25px 0 0}
+  .small-note{text-align:center;font-size:.85rem;color:#9a7d8d;margin-top:20px}
+  @media(max-width:460px){.sheet{padding:26px 20px}.sheet:before{inset:8px}.message{padding:18px 13px}.btn{width:100%;text-align:center}}
+  @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="decor" aria-hidden="true"><span class="float">♡</span><span class="float">💗</span><span class="float">✿</span><span class="float">♡</span><span class="float">💖</span></div>
+<main class="wrap">
+  <section class="sheet">
+    <div class="content">
+      <section class="page active" id="home" aria-labelledby="home-title">
+        <div class="topline">✦ маленькая записка для тебя ✦</div>
+        <div class="school-icons" aria-hidden="true">📚 💌 ✏️ 💗</div>
+        <h1 id="home-title">Для моей любимой</h1>
+        <p class="subtitle">Немного любви между уроками и тетрадками</p>
+        <div class="message">Привет любимая я тебя очень очень сильно люблю 💖 я не знаю написал ли я тест хорошо но это не главное а главное что я постарался 🥰 дальше будет небольшой опрос для тебя ❤️</div>
+        <button class="btn" type="button" onclick="goTo('quiz')">Перейти на опросник 💕</button>
+        <p class="small-note">Сделано с любовью и капелькой школьной магии ✨</p>
+      </section>
+
+      <section class="page" id="quiz" aria-labelledby="quiz-title">
+        <div class="topline">✦ мини-опрос ✦</div>
+        <h1 id="quiz-title">Пару вопросов для тебя 💞</h1>
+        <p class="subtitle">Выбирай ответы, солнышко. В конце тебя ждёт послание ❤️</p>
+        <div class="progress" aria-label="Прогресс опроса"><span id="progress-bar"></span></div>
+        <form id="quiz-form">
+          <div class="question">
+            <h2>1# Как прошёл день?</h2>
+            <div class="options">
+              <label class="option"><input type="radio" name="q1" value="Хорошо"> Хорошо</label>
+              <label class="option"><input type="radio" name="q1" value="Отлично"> Отлично</label>
+              <label class="option"><input type="radio" name="q1" value="ЗАМЕЧАТЕЛЬНО 🥰❤️‍🔥❤️"> ЗАМЕЧАТЕЛЬНО 🥰❤️‍🔥❤️</label>
+            </div>
+          </div>
+          <div class="question">
+            <h2>2# Какое у тебя настроение?</h2>
+            <div class="options">
+              <label class="option"><input type="radio" name="q2" value="Хорошее"> Хорошее</label>
+              <label class="option"><input type="radio" name="q2" value="Отличное"> Отличное</label>
+              <label class="option"><input type="radio" name="q2" value="Сногсшибательное настроение ❤️❤️❤️"> Сногсшибательное настроение ❤️❤️❤️</label>
+            </div>
+          </div>
+          <div class="question">
+            <h2>3# Я тебя люблю очень очень сильно ❤️❤️</h2>
+            <div class="options">
+              <label class="option"><input type="radio" name="q3" value="ДА!"> ДА!</label>
+              <label class="option"><input type="radio" name="q3" value="ДА!!!!"> ДА!!!!</label>
+              <label class="option"><input type="radio" name="q3" value="ДЯ Я ТЕБЯ ТОЖЕЕЕЕЕ!!!!"> ДЯ Я ТЕБЯ ТОЖЕЕЕЕЕ!!!!</label>
+            </div>
+          </div>
+          <p class="error" id="form-error" role="status"></p>
+          <button class="btn" type="submit">Завершить опрос 💖</button>
+        </form>
+      </section>
+
+      <section class="page" id="result" aria-labelledby="result-title">
+        <div class="topline">✦ опрос завершён ✦</div>
+        <div class="school-icons" aria-hidden="true">🎀 📖 💗</div>
+        <h1 id="result-title">Поздравляю, любимая!</h1>
+        <div class="message">Поздравляю с первой прода пареласи ты самая красивая и лучшая там ❤️🥰</div>
+        <h2 style="text-align:center;color:#a52f68;margin:28px 0 14px">Твои ответы 💌</h2>
+        <div id="answers"></div>
+        <p class="signature">Я тебя очень-очень люблю 💖</p>
+      </section>
+    </div>
+  </section>
+</main>
+<script>
+  const labels = {
+    q1: "Как прошёл день?",
+    q2: "Какое у тебя настроение?",
+    q3: "Я тебя люблю очень очень сильно ❤️❤️"
+  };
+  function goTo(page) {
+    document.querySelectorAll('.page').forEach(el => el.classList.toggle('active', el.id === page));
+    if (page === 'quiz') updateProgress();
+    history.replaceState(null, '', '#' + page);
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+  function updateProgress() {
+    const total = 3;
+    const answered = [...new Set([...document.querySelectorAll('#quiz-form input:checked')].map(i => i.name))].length;
+    document.getElementById('progress-bar').style.width = (answered / total * 100) + '%';
+  }
+  document.querySelectorAll('#quiz-form input').forEach(input => input.addEventListener('change', updateProgress));
+  document.getElementById('quiz-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const form = new FormData(this);
+    const questions = ['q1','q2','q3'];
+    const missing = questions.some(q => !form.get(q));
+    if (missing) {
+      document.getElementById('form-error').textContent = 'Ответь, пожалуйста, на все три вопроса 💗';
+      const firstMissing = questions.find(q => !form.get(q));
+      document.querySelector('input[name="' + firstMissing + '"]').focus();
+      return;
+    }
+    document.getElementById('form-error').textContent = '';
+    const answers = document.getElementById('answers');
+    answers.replaceChildren();
+    questions.forEach((q, i) => {
+      const card = document.createElement('div');
+      card.className = 'answer-card';
+      const strong = document.createElement('strong');
+      strong.textContent = (i + 1) + '. ' + labels[q];
+      const p = document.createElement('p');
+      p.textContent = form.get(q);
+      card.append(strong, p);
+      answers.append(card);
+    });
+    goTo('result');
+  });
+  const initial = location.hash.replace('#','');
+  if (['home','quiz','result'].includes(initial)) goTo(initial);
+</script>
+</body>
+</html>
